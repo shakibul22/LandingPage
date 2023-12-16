@@ -15,7 +15,7 @@ function App() {
     return (
         <div className='bg-[#dcfce7] '>
          
-  <div className="mx-auto flex max-w-screen  items-center justify-end p-6 lg:px-[100px]" aria-label="Global">
+  <div className="mx-auto flex max-w-screen  items-center justify-between p-6 lg:px-[100px]" aria-label="Global">
     <div className="flex lg:flex-1">
     <h4 className='font-serif text-2xl'>Organ<span className='text-green-500'>o</span> </h4>
     </div>
