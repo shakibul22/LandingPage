@@ -1,62 +1,155 @@
 import React, { useState } from "react";
-import cartIcon from "../../assets/icon-cart-white.svg";
+
 import closeIcon from "../../assets/icon-close-white.svg";
 import prevIcon from "../../assets/icon-previous.svg";
 import nextIcon from "../../assets/icon-next.svg";
-import large1 from "../../assets/image-product-1.jpg";
-import large2 from "../../assets/image-product-2.jpg";
-import large3 from "../../assets/image-product-3.jpg";
-import large4 from "../../assets/image-product-4.jpg";
 
-import small1 from "../../assets/image-product-1-thumbnail.jpg";
-import small2 from "../../assets/image-product-2-thumbnail.jpg";
-import small3 from "../../assets/image-product-3-thumbnail.jpg";
-import small4 from "../../assets/image-product-4-thumbnail.jpg";
 export const data = [
-    {
-      id: 1,
-      largeImg: large1,
-      smallImg: small1,
+  {
+    "id": 1,
+    "manufacturer": "Google Inc.",
+    "model": "Google Pixel 3",
+    "largeImg": "https://res.cloudinary.com/drhtv8dr4/image/upload/v1703019808/Pixel_zyadql.png",
+    "smallImg": "https://res.cloudinary.com/drhtv8dr4/image/upload/v1703019808/Pixel_zyadql.png",
+    "price": "799.00",
+    "description": "Staying too far from your loved ones? Video call them for hours on end. The weather is romantic? Listen to your favourite playlists all day long. Don’t want to go out this weekend? Then binge watch your favourite series on the Internet. The Pixel 3 ensures that there’s never a dull moment, all thanks to its powerful battery, impressive cameras and its expansive bezel-less display.",
+    "specs": {
+      "body": "145.6 x 68.2 x 7.9 mm (5.73 x 2.69 x 0.31 in)",
+      "camera": {
+        "main": "12.2 MP (wide) dual pixel",
+        "selfie": "8 MP (ultrawide), no AF",
+        "features": "Dual-LED flash, Auto-HDR, panorama"
+      },
+      "memory": "64/128 GB, 4 GB RAM",
+      "battery": "Non-removable Li-Po 2915 mAh battery",
+      "chipset": "Qualcomm SDM845 Snapdragon 845 (10 nm)",
+      "display": "5.5 inches, 1080 x 2160 pixels, 18:9 ratio (~443 ppi density)",
+      "features": "NFC, USB 3.1 Type-C 1.0, fingerprint (rear-mounted), fast battery charging, Gorilla Glass 5, aluminum frame, IP68 dust/water resistant, Always-on display, HDR",
+      "platform": "OS Android 9.0 (Pie)"
     },
-    {
-      id: 2,
-      largeImg: large2,
-      smallImg: small2,
+    "stock": 49
+  },
+  {
+    "id": 2,
+    "manufacturer": "Apple Inc.",
+    "model": "iPhone 12",
+    "largeImg": "https://res.cloudinary.com/drhtv8dr4/image/upload/v1703019808/Pixel_zyadql.png",
+    "smallImg": "https://res.cloudinary.com/drhtv8dr4/image/upload/v1703019808/Pixel_zyadql.png",
+    "price": "999.00",
+    "description": "Experience the power of A14 Bionic chip. Capture your best moments with Night mode and Deep Fusion. Enjoy the edge-to-edge OLED display. The iPhone 12 brings innovation at every level for an exceptional user experience.",
+    "specs": {
+      "body": "146.7 x 71.5 x 7.4 mm (5.78 x 2.82 x 0.29 in)",
+      "camera": {
+        "main": "12 MP (wide) dual pixel",
+        "selfie": "12 MP (ultrawide), HDR",
+        "features": "Dual-LED dual-tone flash, Night mode, Deep Fusion"
+      },
+      "memory": "64/128/256 GB, 4 GB RAM",
+      "battery": "Non-removable Li-Ion 2815 mAh battery",
+      "chipset": "Apple A14 Bionic (5 nm)",
+      "display": "6.1 inches, 1170 x 2532 pixels, 19.5:9 ratio (~460 ppi density)",
+      "features": "Face ID, USB-C reversible connector, Ceramic Shield front cover, HDR10, Dolby Vision",
+      "platform": "iOS 14, upgradable to iOS 15"
     },
-    {
-      id: 3,
-      largeImg: large3,
-      smallImg: small3,
+    "stock": 35
+  },
+  {
+    "id": 3,
+    "manufacturer": "Samsung",
+    "model": "Samsung Galaxy S21",
+    "largeImg": "https://res.cloudinary.com/drhtv8dr4/image/upload/v1703019808/Pixel_zyadql.png",
+    "smallImg": "https://res.cloudinary.com/drhtv8dr4/image/upload/v1703019808/Pixel_zyadql.png",
+    "price": "899.00",
+    "description": "Unleash your creativity with the powerful Exynos 2100 processor. Explore stunning photography with 8K video recording. Immerse yourself in the 120Hz Dynamic AMOLED display. The Galaxy S21 redefines smartphone excellence.",
+    "specs": {
+      "body": "151.7 x 71.2 x 7.9 mm (5.97 x 2.80 x 0.31 in)",
+      "camera": {
+        "main": "12 MP (wide) Dual Pixel",
+        "selfie": "10 MP (wide), Dual Pixel",
+        "features": "LED flash, auto-HDR, panorama, 8K video recording"
+      },
+      "memory": "128/256 GB, 8 GB RAM",
+      "battery": "Non-removable Li-Ion 4000 mAh battery",
+      "chipset": "Exynos 2100 (5 nm) - International",
+      "display": "6.2 inches, 1080 x 2400 pixels, 20:9 ratio (~421 ppi density), Dynamic AMOLED 2X, 120Hz",
+      "features": "Fingerprint (under display, ultrasonic), IP68 dust/water resistant, HDR10+, Gorilla Glass Victus",
+      "platform": "Android 11, One UI 3.1"
     },
-    {
-      id: 4,
-      largeImg: large4,
-      smallImg: small4,
+    "stock": 27
+  },
+  {
+    "id": 4,
+    "manufacturer": "Samsung",
+    "model": "Samsung Galaxy S21",
+    "largeImg": "https://res.cloudinary.com/drhtv8dr4/image/upload/v1703019808/Pixel_zyadql.png",
+    "smallImg": "https://res.cloudinary.com/drhtv8dr4/image/upload/v1703019808/Pixel_zyadql.png",
+    "price": "899.00",
+    "description": "Unleash your creativity with the powerful Exynos 2100 processor. Explore stunning photography with 8K video recording. Immerse yourself in the 120Hz Dynamic AMOLED display. The Galaxy S21 redefines smartphone excellence.",
+    "specs": {
+      "body": "151.7 x 71.2 x 7.9 mm (5.97 x 2.80 x 0.31 in)",
+      "camera": {
+        "main": "12 MP (wide) Dual Pixel",
+        "selfie": "10 MP (wide), Dual Pixel",
+        "features": "LED flash, auto-HDR, panorama, 8K video recording"
+      },
+      "memory": "128/256 GB, 8 GB RAM",
+      "battery": "Non-removable Li-Ion 4000 mAh battery",
+      "chipset": "Exynos 2100 (5 nm) - International",
+      "display": "6.2 inches, 1080 x 2400 pixels, 20:9 ratio (~421 ppi density), Dynamic AMOLED 2X, 120Hz",
+      "features": "Fingerprint (under display, ultrasonic), IP68 dust/water resistant, HDR10+, Gorilla Glass Victus",
+      "platform": "Android 11, One UI 3.1"
     },
-  ];
+    "stock": 27
+  },
+  {
+    "id": 5,
+    "manufacturer": "Samsung",
+    "model": "Samsung Galaxy S21",
+    "largeImg": "https://fdn2.gsmarena.com/vv/pics/tecno/tecno-spark10-pro-.jpg",
+    "smallImg": "https://fdn2.gsmarena.com/vv/pics/tecno/tecno-spark10-pro-.jpg",
+    "price": "899.00",
+    "description": "Unleash your creativity with the powerful Exynos 2100 processor. Explore stunning photography with 8K video recording. Immerse yourself in the 120Hz Dynamic AMOLED display. The Galaxy S21 redefines smartphone excellence.",
+    "specs": {
+      "body": "151.7 x 71.2 x 7.9 mm (5.97 x 2.80 x 0.31 in)",
+      "camera": {
+        "main": "12 MP (wide) Dual Pixel",
+        "selfie": "10 MP (wide), Dual Pixel",
+        "features": "LED flash, auto-HDR, panorama, 8K video recording"
+      },
+      "memory": "128/256 GB, 8 GB RAM",
+      "battery": "Non-removable Li-Ion 4000 mAh battery",
+      "chipset": "Exynos 2100 (5 nm) - International",
+      "display": "6.2 inches, 1080 x 2400 pixels, 20:9 ratio (~421 ppi density), Dynamic AMOLED 2X, 120Hz",
+      "features": "Fingerprint (under display, ultrasonic), IP68 dust/water resistant, HDR10+, Gorilla Glass Victus",
+      "platform": "Android 11, One UI 3.1"
+    },
+    "stock": 27
+  }
+];
+
 const Details = () => {
-    const [price, setPrice] = useState(125.0);
-    const [qty, setQty] = useState(0);
-    const products = [...data];
-    const [value, setValue] = useState(0);
-  
-    const [modal, setModal] = useState(true);
-  
-    const largeImage = products[value].largeImg;
-  
-    const fixedPrice = price.toFixed(2);
-  
-    const totalPrice = fixedPrice * qty;
-    const totalPriceFixed = totalPrice.toFixed(2);
-  
-    const decrease = () => {
-      if (qty === 0) {
-        return;
-      }
-      {
-        setQty((prev) => prev - 1);
-      }
-    };
+  const [price, setPrice] = useState(999.0); // Set the price to 999.0 for iPhone 12
+  const [qty, setQty] = useState(0);
+  const products = [...data];
+  const [value, setValue] = useState(0);
+
+  const [modal, setModal] = useState(true);
+
+  const largeImage = products[value].largeImg;
+
+  const fixedPrice = price.toFixed(2);
+
+  const totalPrice = fixedPrice * qty;
+  const totalPriceFixed = totalPrice.toFixed(2);
+
+  const decrease = () => {
+    if (qty === 0) {
+      return;
+    }
+    {
+      setQty((prev) => prev - 1);
+    }
+  };
   
     const toggleModal = () => {
       setModal((prev) => !prev);
