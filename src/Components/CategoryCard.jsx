@@ -1,4 +1,5 @@
 import { FaHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const CategoryCard = ({ id, model, image, manufacturer }) => {
     console.log(id);
     return (
@@ -13,7 +14,7 @@ const CategoryCard = ({ id, model, image, manufacturer }) => {
        <FaHeart/>
        </div>
         <div className="card-actions justify-end">
-          <button className="btn btn-success btn-outline">View Details</button>
+          <Link to='/details'><button className="btn btn-success btn-outline">View Details</button></Link>
         </div>
       </div>
     </div>
